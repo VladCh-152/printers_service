@@ -1,0 +1,66 @@
+﻿@page "/registration"
+@using System.Net.Http
+@using System.Net.Http.Json
+@using System.Threading.Tasks
+@using PrintersFrontend.Models
+@inject HttpClient Http
+@inject NavigationManager navigationManager
+
+@if (registration == null)
+{
+    <Loading />
+}
+else
+{
+<EditForm Model="registration" OnValidSubmit="@Registrate">
+    <DataAnnotationsValidator />
+
+    <h6>Имя</h6>
+    <InputText class="InStyle" id="Name" @bind-Value="registration.Name" placeholder="Имя" />
+    <ValidationMessage For="@(() => registration.Name)" />
+    <br />
+    <br />
+    <h6>e-mail</h6>
+    <InputText class="InStyle" id="mail" @bind-Value="registration.Mail" placeholder="e-mail" />
+    <ValidationMessage For="@(() => registration.Mail)" />
+    <br />
+    <br />
+    <h6>Пароль</h6>
+    <InputText type="password" class="InStyle" id="pass1" @bind-Value="registration.Pass1" placeholder="пароль" />
+    <ValidationMessage For="@(() => registration.Pass1)" />
+    <br />
+    <br />
+    <h6>Подтвердите пароль</h6>
+    <InputText type="password" class="InStyle" id="pass2" @bind-Value="registration.Pass2" placeholder="подтвердите пароль" />
+    <ValidationMessage For="@(() => registration.Pass2)" />
+    <br />
+    <br />
+    <Button Type="submit" Name="Зарегистрироваться" Width="250" />
+</EditForm>
+}
+
+@code
+{
+    private Register registration;
+    private Role role;
+    private User user;
+
+    protected override async Task OnInitializedAsync()
+    {
+        user = new User();
+        registration = new Register();
+        role = await Http.GetFromJsonAsync<Role>("https://localhost:44337/api/roles/2");
+    }
+
+
+    private async Task Registrate()
+    {
+        user.Name = registration.Name;
+        user.Mail = registration.Mail;
+        user.Password = registration.Pass1;
+        user.RoleId = 2;
+        //user.role = role;
+        await Http.PostAsJsonAsync("https://localhost:44337/api/users", user);
+        navigationManager.NavigateTo("https://localhost:44382/authentication");
+    }
+}

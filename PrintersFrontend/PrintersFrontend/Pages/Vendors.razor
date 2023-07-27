@@ -1,0 +1,89 @@
+﻿@page "/vendors"
+@using System.Net.Http
+@using System.Net.Http.Json
+@using System.Threading.Tasks
+@using PrintersFrontend.Models
+@using PrintersFrontend.Services
+@inject PrinterService _printerService
+@inject HttpClient Http
+@inject NavigationManager navigationManager
+
+<h3>Vendors</h3>
+
+@if (!isAvailable)
+{
+    <Loading />
+}
+else if (lvendors != null)
+{
+    <Button Name="Добавить нового производителя" Width="250" OnClick="AddVendor"></Button>
+
+    <div class="st_viewport">
+        <div class="st_wrap_table" data-table_id="0">
+            <header class="st_table_header">
+                <h2>Производители</h2>
+                <div class="st_row">
+                    <div class="st_column _short" @onclick="@(() => SortArr(1, x => x.Id))">Id</div>
+                    <div class="st_column _long" @onclick="@(() => SortArr(2, x => x.Name))">Производитель</div>
+                </div>
+            </header>
+            @foreach (var vendor in lvendors)
+            {
+                <div class="st_table">
+                    <div class="st_row">
+                        <div class="st_column _Id _short" @onclick="@(() => ChangeVendor(vendor.Id))">@vendor.Id</div>
+                        <div class="st_column _par _long" @onclick="@(() => ChangeVendor(vendor.Id))">@vendor.Name</div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}
+else
+{
+    <Unavailable />
+}
+
+@code
+{
+    private List<Vendor> lvendors;
+    int directionSortId = 1;
+    private bool isAvailable = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        lvendors = await _printerService.getVendors();
+        isAvailable = true;
+    }
+
+    private void SortArr<TKey>(int id, Func<Vendor, TKey> key)
+    {
+        if (directionSortId == id || directionSortId == (-1 * id))
+        {
+            if (directionSortId > 0)
+            {
+                lvendors = lvendors.OrderByDescending(key).ToList();
+            }
+            else
+            {
+                lvendors = lvendors.OrderBy(key).ToList();
+            }
+            directionSortId = -1 * directionSortId;
+        }
+        else
+        {
+            lvendors = lvendors.OrderBy(key).ToList();
+            directionSortId = id;
+        }
+    }
+
+    private void ChangeVendor(int Id)
+    {
+        navigationManager.NavigateTo("https://localhost:44382/vendor/" + Id.ToString());
+    }
+
+    private void AddVendor()
+    {
+        navigationManager.NavigateTo("https://localhost:44382/vendor/0");
+    }
+}

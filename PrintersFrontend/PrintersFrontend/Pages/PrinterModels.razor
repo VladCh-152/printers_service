@@ -1,0 +1,91 @@
+﻿@page "/models"
+@using System.Net.Http
+@using System.Net.Http.Json
+@using System.Threading.Tasks
+@using PrintersFrontend.Models
+@using PrintersFrontend.Services
+@inject HttpClient Http
+@inject PrinterService _printerService
+@inject NavigationManager navigationManager
+
+<h3>PrinterModels</h3>
+
+@if (!isAvailable)
+{
+    <Loading />
+}
+else if (lmodels != null)
+{
+    <Button Name="Добавить новую модель" Width="250" OnClick="AddModel"></Button>
+
+    <div class="st_viewport">
+        <div class="st_wrap_table" data-table_id="0">
+            <header class="st_table_header">
+                <h2>Модели</h2>
+                <div class="st_row">
+                    <div class="st_column _short" @onclick="@(() => SortArr(1, x => x.Id))">Id</div>
+                    <div class="st_column _long" @onclick="@(() => SortArr(2, x => x.Vendor.Name))">Производитель</div>
+                    <div class="st_column _med" @onclick="@(() => SortArr(3, x => x.Type.Name))">Тип</div>
+                </div>
+            </header>
+            @foreach (var model in lmodels)
+            {
+                <div class="st_table">
+                    <div class="st_row">
+                        <div class="st_column _Id _short" @onclick="@(() => ChangeModel(model.Id))">@model.Id</div>
+                        <div class="st_column _par _long" @onclick="@(() => ChangeModel(model.Id))">@model.Vendor.Name</div>
+                        <div class="st_column _par _med" @onclick="@(() => ChangeModel(model.Id))">@model.Type.Name</div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}
+else
+{
+    <Unavailable />
+}
+
+@code
+{
+    private List<PrinterModel> lmodels;
+    private int directionSortId = 1;
+    private bool isAvailable = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        lmodels = await _printerService.getModels();
+        isAvailable = true;
+    }
+
+    private void SortArr<TKey>(int id, Func<PrinterModel, TKey> key)
+    {
+        if (directionSortId == id || directionSortId == (-1 * id))
+        {
+            if (directionSortId > 0)
+            {
+                lmodels = lmodels.OrderByDescending(key).ToList();
+            }
+            else
+            {
+                lmodels = lmodels.OrderBy(key).ToList();
+            }
+            directionSortId = -1 * directionSortId;
+        }
+        else
+        {
+            lmodels = lmodels.OrderBy(key).ToList();
+            directionSortId = id;
+        }
+    }
+
+    private void ChangeModel(int Id)
+    {
+        navigationManager.NavigateTo("https://localhost:44382/model/" + Id.ToString());
+    }
+
+    private void AddModel()
+    {
+        navigationManager.NavigateTo("https://localhost:44382/model/0");
+    }
+}

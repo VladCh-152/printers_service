@@ -1,0 +1,56 @@
+﻿@page "/authentication"
+@using System.Text.Json
+@using System.Net.Http
+@using System.Net.Http.Json
+@using System.Threading.Tasks
+@using PrintersFrontend.Models
+@using PrintersFrontend.Services
+@inject AuthService _authService
+@inject PrinterService _printerService
+@inject NavigationManager navigationManager
+
+@if (user == null)
+{
+    <Loading />
+}
+else
+{
+    <EditForm Model="user" OnValidSubmit="@Authenticate">
+        <DataAnnotationsValidator />
+
+        <h6>e-mail</h6>
+        <InputText class="InStyle" id="mail" @bind-Value="user.Mail" placeholder="e-mail" />
+        <ValidationMessage For="@(() => user.Mail)" />
+        <br />
+        <br />
+        <h6>Пароль</h6>
+        <InputText type="password" class="InStyle" id="pass1" @bind-Value="user.Password" placeholder="пароль" />
+        <ValidationMessage For="@(() => user.Password)" />
+        <br />
+        @if (!isCorr)
+        {
+            <h6>Невеный пароль</h6>
+            <br />
+        }
+        <br />
+        <Button Type="submit" Name="Авторизоваться" Width="250" />
+    </EditForm>
+}
+
+@code
+{
+    private login_token auth;
+    private AUser user;
+    bool isCorr = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        user = new AUser();
+    }
+
+    private async Task Authenticate()
+    {
+        isCorr = await _authService.AuthenticateAsync(user);
+        await _printerService.LoadTokenAsync();
+    }
+}

@@ -1,0 +1,97 @@
+﻿@page "/printers"
+@using System.Net.Http
+@using System.Net.Http.Json
+@using System.Threading.Tasks
+@using PrintersFrontend.Models
+@using PrintersFrontend.Services
+@inject HttpClient Http
+@inject PrinterService _printerService
+@inject NavigationManager navigationManager
+@inject AuthService authService
+
+
+<h3>printers</h3>
+
+@if (!isAvailable)
+{
+    <Loading />
+}
+else if (lprinters != null)
+{
+    <Button Name="Добавить новый принтер" Width="250" OnClick="AddPrinter"></Button>
+
+    <div class="st_viewport">
+        <div class="st_wrap_table" data-table_id="0">
+            <header class="st_table_header">
+                <h2>Принтеры</h2>
+                <div class="st_row">
+                    <div class="st_column _short" @onclick="@(() => SortArr(1, x => x.Id))">Id</div>
+                    <div class="st_column _long" @onclick="@(() => SortArr(2, x => x.InventoryNum))">Инвентарный номер</div>
+                    <div class="st_column _long" @onclick="@(() => SortArr(3, x => x.Model.Vendor.Name))">Производитель</div>
+                    <div class="st_column _med" @onclick="@(() => SortArr(4, x => x.Model.Type.Name))">Тип</div>
+                </div>
+            </header>
+            @foreach (var printer in lprinters)
+            {
+                <div class="st_table">
+                    <div class="st_row">
+                        <div class="st_column _short _Id" @onclick="@(() => ChangePrinter(printer.Id))">@printer.Id</div>
+                        <div class="st_column _long _par" @onclick="@(() => ChangePrinter(printer.Id))">@printer.InventoryNum</div>
+                        <div class="st_column _long _par" @onclick="@(() => ChangePrinter(printer.Id))">@printer.Model.Vendor.Name</div>
+                        <div class="st_column _med _par" @onclick="@(() => ChangePrinter(printer.Id))">@printer.Model.Type.Name</div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}
+else
+{
+    <Unavailable />
+}
+
+@code
+{
+    private List<Printer> lprinters;
+    int directionSortId = 1;
+    bool isAvailable = false;
+    private string _role;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _role = await authService.GetRoleAsync();
+        lprinters = await _printerService.getPrinters();
+        isAvailable = true;
+    }
+
+    private void SortArr<TKey>(int id, Func<Printer, TKey> key)
+    {
+        if (directionSortId == id || directionSortId == (-1 * id))
+        {
+            if (directionSortId > 0)
+            {
+                lprinters = lprinters.OrderByDescending(key).ToList();
+            }
+            else
+            {
+                lprinters = lprinters.OrderBy(key).ToList();
+            }
+            directionSortId = -1 * directionSortId;
+        }
+        else
+        {
+            lprinters = lprinters.OrderBy(key).ToList();
+            directionSortId = id;
+        }
+    }
+
+    private void ChangePrinter(int Id)
+    {
+        navigationManager.NavigateTo("https://localhost:44382/printer/" + Id.ToString());
+    }
+
+    private void AddPrinter()
+    {
+        navigationManager.NavigateTo("https://localhost:44382/printer/0");
+    }
+}

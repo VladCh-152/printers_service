@@ -1,0 +1,141 @@
+{
+  "version": 2,
+  "dgSpecHash": "8ELE5lyIgMPoj8q/1oiDGJVvyPXMpGN72pHtk9EORDc+vVP0AEjMu6tyiji4F3Cl3ww9eGI1+mFMe2nspOaOmw==",
+  "success": true,
+  "projectFilePath": "D:\\source\\repos\\PrintersBackend\\PrintersBackend\\PrintersBackend.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.13\\microsoft.aspnetcore.authentication.jwtbearer.5.0.13.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.2\\microsoft.data.sqlclient.2.1.2.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.4\\microsoft.entityframeworkcore.5.0.4.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.4\\microsoft.entityframeworkcore.abstractions.5.0.4.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\5.0.4\\microsoft.entityframeworkcore.analyzers.5.0.4.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\5.0.4\\microsoft.entityframeworkcore.relational.5.0.4.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\5.0.4\\microsoft.entityframeworkcore.sqlserver.5.0.4.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.extensions.caching.memory\\5.0.0\\microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.1\\microsoft.extensions.dependencyinjection.5.0.1.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.identity.client\\4.28.1\\microsoft.identity.client.4.28.1.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.9.0\\microsoft.identitymodel.jsonwebtokens.6.9.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.identitymodel.logging\\6.9.0\\microsoft.identitymodel.logging.6.9.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.identitymodel.protocols\\6.9.0\\microsoft.identitymodel.protocols.6.9.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\6.9.0\\microsoft.identitymodel.protocols.openidconnect.6.9.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.9.0\\microsoft.identitymodel.tokens.6.9.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.1\\system.diagnostics.diagnosticsource.5.0.1.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.9.0\\system.identitymodel.tokens.jwt.6.9.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\system.runtime.caching\\4.7.0\\system.runtime.caching.4.7.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\system.security.cryptography.cng\\4.7.0\\system.security.cryptography.cng.4.7.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\system.security.cryptography.protecteddata\\4.7.0\\system.security.cryptography.protecteddata.4.7.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\system.security.permissions\\4.7.0\\system.security.permissions.4.7.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\system.text.encoding.codepages\\4.7.0\\system.text.encoding.codepages.4.7.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Microsoft.IdentityModel.Tokens 6.9.0 зависит от Microsoft.CSharp (>= 4.5.0), но Microsoft.CSharp 4.5.0 не найден. Использовано наилучшее приближенное соответствие Microsoft.CSharp 4.7.0.",
+      "libraryId": "Microsoft.CSharp",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Microsoft.EntityFrameworkCore.SqlServer 5.0.4 зависит от Microsoft.Data.SqlClient (>= 2.0.1), но Microsoft.Data.SqlClient 2.0.1 не найден. Использовано наилучшее приближенное соответствие Microsoft.Data.SqlClient 2.1.2.",
+      "libraryId": "Microsoft.Data.SqlClient",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "PrintersBackend зависит от Microsoft.EntityFrameworkCore.SqlServer (>= 5.0.0-rc.1.20451.13), но Microsoft.EntityFrameworkCore.SqlServer 5.0.0-rc.1.20451.13 не найден. Использовано наилучшее приближенное соответствие Microsoft.EntityFrameworkCore.SqlServer 5.0.4.",
+      "libraryId": "Microsoft.EntityFrameworkCore.SqlServer",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Microsoft.Data.SqlClient 2.1.2 зависит от Microsoft.Identity.Client (>= 4.21.1), но Microsoft.Identity.Client 4.21.1 не найден. Использовано наилучшее приближенное соответствие Microsoft.Identity.Client 4.28.1.",
+      "libraryId": "Microsoft.Identity.Client",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Microsoft.Data.SqlClient 2.1.2 зависит от Microsoft.IdentityModel.JsonWebTokens (>= 6.8.0), но Microsoft.IdentityModel.JsonWebTokens 6.8.0 не найден. Использовано наилучшее приближенное соответствие Microsoft.IdentityModel.JsonWebTokens 6.9.0.",
+      "libraryId": "Microsoft.IdentityModel.JsonWebTokens",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Microsoft.IdentityModel.Protocols.OpenIdConnect 6.7.1 зависит от Microsoft.IdentityModel.Protocols (>= 6.7.1), но Microsoft.IdentityModel.Protocols 6.7.1 не найден. Использовано наилучшее приближенное соответствие Microsoft.IdentityModel.Protocols 6.9.0.",
+      "libraryId": "Microsoft.IdentityModel.Protocols",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Microsoft.Data.SqlClient 2.1.2 зависит от Microsoft.IdentityModel.Protocols.OpenIdConnect (>= 6.8.0), но Microsoft.IdentityModel.Protocols.OpenIdConnect 6.8.0 не найден. Использовано наилучшее приближенное соответствие Microsoft.IdentityModel.Protocols.OpenIdConnect 6.9.0.",
+      "libraryId": "Microsoft.IdentityModel.Protocols.OpenIdConnect",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Microsoft.IdentityModel.Protocols.OpenIdConnect 6.7.1 зависит от System.IdentityModel.Tokens.Jwt (>= 6.7.1), но System.IdentityModel.Tokens.Jwt 6.7.1 не найден. Использовано наилучшее приближенное соответствие System.IdentityModel.Tokens.Jwt 6.9.0.",
+      "libraryId": "System.IdentityModel.Tokens.Jwt",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Microsoft.IdentityModel.Tokens 6.9.0 зависит от System.Security.Cryptography.Cng (>= 4.5.0), но System.Security.Cryptography.Cng 4.5.0 не найден. Использовано наилучшее приближенное соответствие System.Security.Cryptography.Cng 4.7.0.",
+      "libraryId": "System.Security.Cryptography.Cng",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
+}

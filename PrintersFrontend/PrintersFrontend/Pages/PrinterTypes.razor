@@ -1,0 +1,89 @@
+﻿@page "/types"
+@using System.Net.Http
+@using System.Net.Http.Json
+@using System.Threading.Tasks
+@using PrintersFrontend.Models
+@using PrintersFrontend.Services
+@inject PrinterService _printerService
+@inject HttpClient Http
+@inject NavigationManager navigationManager
+
+<h3>PrinterTypes</h3>
+
+@if (!isAvailable)
+{
+    <Loading />
+}
+else if (ltypes != null)
+{
+    <Button Name="Добавить новый тип" Width="250" OnClick="AddType"></Button>
+
+    <div class="st_viewport">
+        <div class="st_wrap_table" data-table_id="0">
+            <header class="st_table_header">
+                <h2>Типы</h2>
+                <div class="st_row">
+                    <div class="st_column _short" @onclick="@(() => SortArr(1, x => x.Id))">Id</div>
+                    <div class="st_column _med" @onclick="@(() => SortArr(2, x => x.Name))">Тип</div>
+                </div>
+            </header>
+            @foreach (var type in ltypes)
+            {
+                <div class="st_table">
+                    <div class="st_row">
+                        <div class="st_column _Id _short" @onclick="@(() => ChangeType(type.Id))">@type.Id</div>
+                        <div class="st_column _par _med" @onclick="@(() => ChangeType(type.Id))">@type.Name</div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}
+else
+{
+    <Unavailable />
+}
+
+@code
+{
+    private List<PrinterType> ltypes;
+    int directionSortId = 1;
+    private bool isAvailable = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        ltypes = await _printerService.getTypes();
+        isAvailable = true;
+    }
+
+    private void SortArr<TKey>(int id, Func<PrinterType, TKey> key)
+    {
+        if (directionSortId == id || directionSortId == (-1 * id))
+        {
+            if (directionSortId > 0)
+            {
+                ltypes = ltypes.OrderByDescending(key).ToList();
+            }
+            else
+            {
+                ltypes = ltypes.OrderBy(key).ToList();
+            }
+            directionSortId = -1 * directionSortId;
+        }
+        else
+        {
+            ltypes = ltypes.OrderBy(key).ToList();
+            directionSortId = id;
+        }
+    }
+
+    private void ChangeType(int Id)
+    {
+        navigationManager.NavigateTo("https://localhost:44382/type/" + Id.ToString());
+    }
+
+    private void AddType()
+    {
+        navigationManager.NavigateTo("https://localhost:44382/type/0");
+    }
+}

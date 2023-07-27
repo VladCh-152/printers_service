@@ -1,0 +1,87 @@
+﻿@page "/type/{Id:int}"
+@using System.Net.Http
+@using System.Net.Http.Json
+@using System.Threading.Tasks
+@using PrintersFrontend.Models
+@inject HttpClient Http
+@inject NavigationManager navigationManager
+
+@if (changeType == null)
+{
+    <Loading />
+}
+else
+{
+<EditForm Model="changeType" OnValidSubmit="@EditType">
+    <DataAnnotationsValidator />
+
+    <h6>Type</h6>
+    <InputText class="InStyle" id="Name" @bind-Value="changeType.Name" placeholder="Тип" />
+    <ValidationMessage For="@(() => changeType.Name)" />
+    <br />
+    <br />
+    @if (IsNew)
+    {
+        <Button Type="submit" Name="Добавить" Width="250" />
+        <Button Type="button" Name="Назад" Width="250" OnClick="Back"></Button>
+    }
+    else
+    {
+        <Button Type="button" Name="Удалить тип" Width="250" OnClick="RemoveType"></Button>
+        <Button Type="submit" Name="Редактировать" Width="250" />
+        <Button Type="button" Name="Назад" Width="250" OnClick="Back"></Button>
+    }
+</EditForm>
+}
+
+@code
+{
+    [Parameter]
+    public int Id { get; set; }
+    bool IsNew = false;
+
+    private PrinterType changeType;
+
+    protected override async Task OnInitializedAsync()
+    {
+        IsNew = false;
+        if (Id == 0)
+        {
+            IsNew = true;
+            changeType = new PrinterType();
+        }
+        else
+        {
+            changeType = await Http.GetFromJsonAsync<PrinterType>($"https://localhost:44337/api/printertypes/{Id}");
+
+            if (changeType.Id == 0)
+            {
+                Id = 0;
+                IsNew = true;
+            }
+        }
+    }
+
+    private async Task EditType()
+    {
+        if (IsNew)
+        {
+            await Http.PostAsJsonAsync("https://localhost:44337/api/printertypes", changeType);
+        }
+        else
+        {
+            await Http.PutAsJsonAsync($"https://localhost:44337/api/printertypes", changeType);
+        }
+    }
+
+    private void Back()
+    {
+        navigationManager.NavigateTo("https://localhost:44382/types");
+    }
+
+    private async Task RemoveType()
+    {
+        await Http.DeleteAsync($"https://localhost:44337/api/printertypes/{changeType.Id}");
+        changeType = new PrinterType();
+    }
+}

@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "dgSpecHash": "Gwq7Qckhm/lW9EgkAE1swiqur1tq1Oqw41N7glj4oQ+tGalzrfew4ZdFqOyJLMo/o8Hd1kUIztZZwgpRWSvvxw==",
+  "success": true,
+  "projectFilePath": "D:\\source\\repos\\PrintersFrontend\\PrintersFrontend\\PrintersFrontend.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.aspnetcore.authorization\\5.0.13\\microsoft.aspnetcore.authorization.5.0.13.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.aspnetcore.components\\5.0.13\\microsoft.aspnetcore.components.5.0.13.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\5.0.13\\microsoft.aspnetcore.components.analyzers.5.0.13.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.aspnetcore.components.forms\\5.0.13\\microsoft.aspnetcore.components.forms.5.0.13.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.aspnetcore.components.web\\5.0.13\\microsoft.aspnetcore.components.web.5.0.13.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\5.0.13\\microsoft.aspnetcore.components.webassembly.5.0.13.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.devserver\\5.0.13\\microsoft.aspnetcore.components.webassembly.devserver.5.0.13.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.aspnetcore.metadata\\5.0.13\\microsoft.aspnetcore.metadata.5.0.13.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.extensions.configuration\\5.0.0\\microsoft.extensions.configuration.5.0.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.extensions.configuration.binder\\5.0.0\\microsoft.extensions.configuration.binder.5.0.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\5.0.0\\microsoft.extensions.configuration.fileextensions.5.0.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.extensions.configuration.json\\5.0.0\\microsoft.extensions.configuration.json.5.0.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.2\\microsoft.extensions.dependencyinjection.5.0.2.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\5.0.0\\microsoft.extensions.fileproviders.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\5.0.0\\microsoft.extensions.fileproviders.physical.5.0.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\5.0.0\\microsoft.extensions.filesystemglobbing.5.0.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.jsinterop\\5.0.13\\microsoft.jsinterop.5.0.13.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.jsinterop.webassembly\\5.0.13\\microsoft.jsinterop.webassembly.5.0.13.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\system.net.http.json\\5.0.0\\system.net.http.json.5.0.0.nupkg.sha512",
+    "C:\\Users\\apzstdois\\.nuget\\packages\\microsoft.netcore.app.runtime.browser-wasm\\5.0.3\\microsoft.netcore.app.runtime.browser-wasm.5.0.3.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "PrintersFrontend зависит от Microsoft.AspNetCore.Components.WebAssembly (>= 5.0.3), но Microsoft.AspNetCore.Components.WebAssembly 5.0.3 не найден. Использовано наилучшее приближенное соответствие Microsoft.AspNetCore.Components.WebAssembly 5.0.13.",
+      "libraryId": "Microsoft.AspNetCore.Components.WebAssembly",
+      "targetGraphs": [
+        "net5.0",
+        "net5.0/browser-wasm"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "PrintersFrontend зависит от Microsoft.AspNetCore.Components.WebAssembly.DevServer (>= 5.0.3), но Microsoft.AspNetCore.Components.WebAssembly.DevServer 5.0.3 не найден. Использовано наилучшее приближенное соответствие Microsoft.AspNetCore.Components.WebAssembly.DevServer 5.0.13.",
+      "libraryId": "Microsoft.AspNetCore.Components.WebAssembly.DevServer",
+      "targetGraphs": [
+        "net5.0",
+        "net5.0/browser-wasm"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Microsoft.Extensions.Logging 5.0.0 зависит от Microsoft.Extensions.DependencyInjection (>= 5.0.0), но Microsoft.Extensions.DependencyInjection 5.0.0 не найден. Использовано наилучшее приближенное соответствие Microsoft.Extensions.DependencyInjection 5.0.1.",
+      "libraryId": "Microsoft.Extensions.DependencyInjection",
+      "targetGraphs": [
+        "net5.0",
+        "net5.0/browser-wasm"
+      ]
+    }
+  ]
+}
